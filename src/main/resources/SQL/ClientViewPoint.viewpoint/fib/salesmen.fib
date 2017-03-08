@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GINAFIBComponent id="0" userID="FLX" flexoID="-1">
+  <Panel id="1" align="left" borderTop="0" borderLeft="0" trackViewPortHeight="true" trackViewPortWidth="true" borderBottom="0" border="empty" sizeAdjustment="OriginalSize" layout="border" borderRight="0" controllerClassName="org.openflexo.technologyadapter.gina.controller.FMLControlledFIBController">
+    <Panel id="2" align="left" borderTop="0" borderTitle="Salesmen" borderLeft="0" trackViewPortHeight="true" trackViewPortWidth="true" borderBottom="0" border="titled" sizeAdjustment="OriginalSize" titleFont="SansSerif,0,10" layout="border" borderRight="0" constraints="border(location=north)" name="AllSalesmanPanel">
+      <List id="3" visibleRowCount="3" layoutOrientation="vertical" selected="data.currentSalesman" selectionMode="MultipleIntervalSelection" autoSelectFirstRow="true" staticList="Item-1 ,Item-2 ,Item-3 " showText="true" iteratorClassName="org.openflexo.foundation.fml.rt.FlexoConceptInstance" list="data.view.data.salesmen" showIcon="false" format="object.render" constraints="border(location=north)" name="AllSalesmenList" />
+    </Panel>
+    <Panel id="4" align="left" borderTop="0" borderTitle="Informations" borderLeft="0" trackViewPortHeight="true" trackViewPortWidth="true" borderBottom="0" border="titled" sizeAdjustment="OriginalSize" titleFont="SansSerif,0,10" layout="border" borderRight="0" visible="(data.currentSalesman != null)" constraints="border(location=center)" name="DescriptionPanel">
+      <Panel id="5" align="left" borderTop="0" flowAlignment="CENTER" borderLeft="0" trackViewPortHeight="true" trackViewPortWidth="true" cols="3" borderBottom="0" border="etched" sizeAdjustment="OriginalSize" rows="1" layout="grid" vGap="2" borderRight="0" hGap="2" constraints="border(location=north)" name="InformationPanel">
+        <TextField id="6" columns="7" data="data.currentSalesman.firstname" constraints="grid(anchor=center;expandHorizontally=true;expandVertically=false;fill=horizontal;gridHeight=1;gridWidth=2;gridX=-1;gridY=-1;insetsBottom=0;insetsLeft=0;insetsRight=0;insetsTop=0;location=left;padX=0;padY=0;weightX=0.0;weightY=0.5;x=0;y=0)" width="200" height="22" name="FirstNameField" />
+        <TextField id="7" columns="7" data="data.currentSalesman.lastname" constraints="grid(anchor=center;expandHorizontally=true;expandVertically=false;fill=horizontal;gridHeight=1;gridWidth=2;gridX=-1;gridY=-1;insetsBottom=0;insetsLeft=0;insetsRight=0;insetsTop=0;location=right;padX=0;padY=0;weightX=0.0;weightY=0.5;x=1;y=0)" name="LastNameTextField" />
+        <Panel id="8" align="left" borderTop="0" flowAlignment="LEADING" borderLeft="0" trackViewPortHeight="true" trackViewPortWidth="true" borderBottom="0" border="empty" sizeAdjustment="OriginalSize" layout="flow" vGap="0" borderRight="0" hGap="2" constraints="grid(x=2;y=0)" width="100" height="22" name="FIBPanel">
+          <Button id="9" buttonType="Trigger" action="data.currentSalesman.createVisitPlan()" label="Export" constraints="flow()" name="ExportButton" />
+          <Button id="10" buttonType="Trigger" action="data.currentSalesman.synchronizeVisitPlan()" label="Button" constraints="flow()" name="Button" />
+        </Panel>
+      </Panel>
+      <List id="11" visibleRowCount="3" layoutOrientation="vertical" selectionMode="MultipleIntervalSelection" autoSelectFirstRow="true" staticList="Item-1 ,Item-2 ,Item-3 " showText="true" iteratorClassName="org.openflexo.foundation.fml.rt.FlexoConceptInstance" list="data.currentSalesman.clients" showIcon="false" format="object.render" constraints="border(location=center)" name="ClientList" />
+    </Panel>
+    <FIBVariable id="12" type="org.openflexo.foundation.fml.VirtualModelInstanceType&lt;http://www.openflexo.org/ClientViewPoint/2016/12/SalesmenUI&gt;" name="data" />
+    <LocalizedDictionary id="13" />
+  </Panel>
+</GINAFIBComponent>

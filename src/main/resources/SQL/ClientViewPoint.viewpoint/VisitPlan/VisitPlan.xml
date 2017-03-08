@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VirtualModel id="0" modelVersion="1.0" version="0.1" name="VisitPlan" userID="FLX" flexoID="4">
+  <ModelSlot_BasicExcelModelSlot id="1" templateWorkbookURI="http://www.openflexo.org/demos-rc/DataRC/SampleExcelData/VisitPlanTemplate.xlsx" isRequired="true" cloningStrategy="Reference" cardinality="ZeroOne" name="visitPlan" userID="FLX" flexoID="12">
+    <BasicExcelModelSlot idref="1" />
+  </ModelSlot_BasicExcelModelSlot>
+  <FlexoConceptInstanceRole id="2" virtualModelInstance="view" flexoConceptTypeURI="http://www.openflexo.org/ClientViewPoint/2016/12/Data#Salesman" cloningStrategy="Reference" cardinality="ZeroOne" name="salesman" userID="FLX" flexoID="7" />
+  <ExcelSheetRole id="3" container="visitPlan" cloningStrategy="Reference" cardinality="ZeroOne" name="visits" userID="FLX" description="" flexoID="31">
+    <BasicExcelModelSlot idref="1" />
+  </ExcelSheetRole>
+  <CreationScheme id="4" name="create" width="800" label="create" height="600" userID="FLX" flexoID="8">
+    <BehaviourControlGraph_Sequence id="5" userID="FLX" flexoID="21">
+      <ControlGraph2_Sequence id="6" ownerContext="controlGraph2" userID="FLX" flexoID="53">
+        <ControlGraph2_Sequence id="7" ownerContext="controlGraph2" userID="FLX" flexoID="54">
+          <ControlGraph2_AssignationAction id="8" assign="visits" ownerContext="controlGraph2" userID="FLX" flexoID="52">
+            <AssignableAction_ExpressionAction id="9" expression="listSheets.get(0)" userID="FLX" flexoID="51" />
+          </ControlGraph2_AssignationAction>
+          <ControlGraph1_DeclarationAction id="10" variable="listSheets" ownerContext="controlGraph1" userID="FLX" flexoID="48">
+            <AssignableAction_SelectExcelSheet id="11" userID="FLX" flexoID="46">
+              <Condition id="12" condition="(selected.name = &quot;Visites&quot;)" userID="FLX" flexoID="47" />
+              <BasicExcelModelSlot idref="1" />
+            </AssignableAction_SelectExcelSheet>
+          </ControlGraph1_DeclarationAction>
+        </ControlGraph2_Sequence>
+        <ControlGraph1_AssignationAction id="13" assign="visitPlan" ownerContext="controlGraph1" userID="FLX" flexoID="20">
+          <AssignableAction_GenerateExcelResource id="14" resourceCenter="project" relativePath="Data" resourceName="(&quot;visitPlan_&quot; + salesman.lastname)" userID="FLX" description="" flexoID="18">
+            <BasicExcelModelSlot idref="1" />
+          </AssignableAction_GenerateExcelResource>
+        </ControlGraph1_AssignationAction>
+      </ControlGraph2_Sequence>
+      <ControlGraph1_AssignationAction id="15" assign="salesman" ownerContext="controlGraph1" userID="FLX" flexoID="14">
+        <AssignableAction_ExpressionAction id="16" expression="parameters.salesman" userID="FLX" flexoID="13" />
+      </ControlGraph1_AssignationAction>
+    </BehaviourControlGraph_Sequence>
+    <GenericBehaviourParameter id="17" container="view" isRequired="true" widget="CUSTOM_WIDGET" name="salesman" type="org.openflexo.foundation.fml.FlexoConceptInstanceType&lt;http://www.openflexo.org/ClientViewPoint/2016/12/Data#Salesman&gt;" userID="FLX" flexoID="10" />
+  </CreationScheme>
+  <ActionScheme id="18" name="initVisitPlan" width="800" label="initVisitPlan" height="600" userID="FLX" flexoID="22">
+    <BehaviourControlGraph_Sequence id="19" userID="FLX" flexoID="183">
+      <ControlGraph2_LogAction id="20" logLevel="INFO" logString="(&quot;Initialized VisitPlan &quot; + salesman.lastname)" ownerContext="controlGraph2" userID="FLX" flexoID="182" />
+      <ControlGraph1_IterationAction id="21" iteratorName="client" ownerContext="controlGraph1" userID="FLX" flexoID="25">
+        <Iteration_ExpressionAction id="22" expression="salesman.clients" ownerContext="iterationControlGraph" userID="FLX" flexoID="27" />
+        <ControlGraph_Sequence id="23" ownerContext="controlGraph" userID="FLX" flexoID="43">
+          <ControlGraph2_Sequence id="24" ownerContext="controlGraph2" userID="FLX" flexoID="77">
+            <ControlGraph2_Sequence id="25" ownerContext="controlGraph2" userID="FLX" flexoID="78">
+              <ControlGraph2_Sequence id="26" ownerContext="controlGraph2" userID="FLX" flexoID="79">
+                <ControlGraph2_AddExcelCell id="27" columnIndex="3" row="aExcelRow" value="client.comments" ownerContext="controlGraph2" userID="FLX" flexoID="76">
+                  <BasicExcelModelSlot idref="1" />
+                </ControlGraph2_AddExcelCell>
+                <ControlGraph1_AddExcelCell id="28" columnIndex="2" row="aExcelRow" value="client.address" ownerContext="controlGraph1" userID="FLX" flexoID="74">
+                  <BasicExcelModelSlot idref="1" />
+                </ControlGraph1_AddExcelCell>
+              </ControlGraph2_Sequence>
+              <ControlGraph1_AddExcelCell id="29" columnIndex="1" row="aExcelRow" value="client.name" ownerContext="controlGraph1" userID="FLX" description="" flexoID="72">
+                <BasicExcelModelSlot idref="1" />
+              </ControlGraph1_AddExcelCell>
+            </ControlGraph2_Sequence>
+            <ControlGraph1_AddExcelCell id="30" columnIndex="0" row="aExcelRow" value="client.id" ownerContext="controlGraph1" userID="FLX" description="" flexoID="42">
+              <BasicExcelModelSlot idref="1" />
+            </ControlGraph1_AddExcelCell>
+          </ControlGraph2_Sequence>
+          <ControlGraph1_DeclarationAction id="31" variable="aExcelRow" ownerContext="controlGraph1" userID="FLX" flexoID="40">
+            <AssignableAction_AddExcelRow id="32" rowIndex="visits.excelRows.size" excelSheet="visits" userID="FLX" description="" flexoID="39">
+              <BasicExcelModelSlot idref="1" />
+            </AssignableAction_AddExcelRow>
+          </ControlGraph1_DeclarationAction>
+        </ControlGraph_Sequence>
+      </ControlGraph1_IterationAction>
+    </BehaviourControlGraph_Sequence>
+  </ActionScheme>
+  <DeletionScheme id="33" name="delete" width="800" label="delete" height="600" userID="FLX" flexoID="44">
+    <BehaviourControlGraph_EmptyControlGraph id="34" userID="FLX" flexoID="55" />
+  </DeletionScheme>
+  <ActionScheme id="35" name="resyncNotes" width="800" label="resyncNotes" height="600" userID="FLX" flexoID="56">
+    <BehaviourControlGraph_IterationAction id="36" iteratorName="cell" userID="FLX" flexoID="94">
+      <Iteration_SelectExcelCell id="37" excelSheet="visits" ownerContext="iterationControlGraph" userID="FLX" description="" flexoID="97">
+        <Condition id="38" condition="(selected.rowIndex &gt; 2)" userID="FLX" flexoID="98" />
+        <Condition id="39" condition="(selected.columnIndex = 3)" userID="FLX" flexoID="99" />
+        <BasicExcelModelSlot idref="1" />
+      </Iteration_SelectExcelCell>
+      <ControlGraph_Sequence id="40" ownerContext="controlGraph" userID="FLX" flexoID="140">
+        <ControlGraph2_Sequence id="41" ownerContext="controlGraph2" userID="FLX" flexoID="160">
+          <ControlGraph2_Sequence id="42" ownerContext="controlGraph2" userID="FLX" flexoID="173">
+            <ControlGraph2_ConditionalAction id="43" condition="(clients.size &gt; 0)" ownerContext="controlGraph2" userID="FLX" flexoID="167">
+              <ThenControlGraph_Sequence id="44" ownerContext="thenControlGraph" userID="FLX" flexoID="174">
+                <ControlGraph2_AssignationAction id="45" assign="client.comments" ownerContext="controlGraph2" userID="FLX" flexoID="172">
+                  <AssignableAction_ExpressionAction id="46" expression="cell.cellValueAsString" userID="FLX" flexoID="171" />
+                </ControlGraph2_AssignationAction>
+                <ControlGraph1_DeclarationAction id="47" variable="client" ownerContext="controlGraph1" userID="FLX" flexoID="170">
+                  <AssignableAction_ExpressionAction id="48" expression="clients.get(0)" userID="FLX" flexoID="169" />
+                </ControlGraph1_DeclarationAction>
+              </ThenControlGraph_Sequence>
+            </ControlGraph2_ConditionalAction>
+            <ControlGraph1_DeclarationAction id="49" variable="clients" ownerContext="controlGraph1" userID="FLX" flexoID="157">
+              <AssignableAction_SelectFlexoConceptInstance id="50" virtualModelInstance="data" flexoConceptTypeURI="http://www.openflexo.org/ClientViewPoint/2016/12/Data#Client" userID="FLX" flexoID="156">
+                <Condition id="51" condition="(selected.id.intValue.toString = id)" userID="FLX" flexoID="162" />
+              </AssignableAction_SelectFlexoConceptInstance>
+            </ControlGraph1_DeclarationAction>
+          </ControlGraph2_Sequence>
+          <ControlGraph1_DeclarationAction id="52" variable="id" ownerContext="controlGraph1" userID="FLX" flexoID="137">
+            <AssignableAction_ExpressionAction id="53" expression="idValue.substring(0,idValue.indexOf(&quot;.&quot;))" userID="FLX" flexoID="136" />
+          </ControlGraph1_DeclarationAction>
+        </ControlGraph2_Sequence>
+        <ControlGraph1_DeclarationAction id="54" variable="idValue" ownerContext="controlGraph1" userID="FLX" flexoID="103">
+          <AssignableAction_ExpressionAction id="55" expression="cell.previousCell.previousCell.previousCell.cellValueAsString" userID="FLX" flexoID="102" />
+        </ControlGraph1_DeclarationAction>
+      </ControlGraph_Sequence>
+    </BehaviourControlGraph_IterationAction>
+  </ActionScheme>
+  <Inspector id="56" renderer="(&quot;Visit Plan for &quot; + salesman.render)" inspectorTitle="VisitSheet" userID="FLX" flexoID="1" />
+</VirtualModel>

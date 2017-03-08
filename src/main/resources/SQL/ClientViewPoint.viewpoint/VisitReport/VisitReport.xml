@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VirtualModel id="0" modelVersion="1.0" description="" version="0.1" userID="FLX" name="VisitReport" flexoID="4">
+  <ModelSlot_DocXModelSlot id="1" isRequired="true" idStrategy="ParaId" cardinality="ZeroOne" cloningStrategy="Reference" userID="FLX" name="rapport" flexoID="8">
+    <DocXModelSlot idref="1" />
+  </ModelSlot_DocXModelSlot>
+  <Inspector id="2" userID="FLX" inspectorTitle="VisitReport" flexoID="1" />
+</VirtualModel>

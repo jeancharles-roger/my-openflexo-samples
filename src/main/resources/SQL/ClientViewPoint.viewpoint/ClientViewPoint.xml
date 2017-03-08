@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewPoint id="0" userID="FLX" modelVersion="1.0" version="0.1" flexoID="3" description="" name="ClientViewPoint" uri="http://www.openflexo.org/ClientViewPoint/2016/12">
+  <Inspector id="1" flexoID="2" userID="FLX" inspectorTitle="ClientViewPoint" />
+  <FlexoConceptInstanceRole id="2" userID="FLX" virtualModelInstance="view" cloningStrategy="Reference" flexoID="10" name="data" flexoConceptTypeURI="http://www.openflexo.org/ClientViewPoint/2016/12/Data" cardinality="ZeroOne" />
+  <FlexoConceptInstanceRole id="3" userID="FLX" virtualModelInstance="view" cloningStrategy="Reference" flexoID="56" name="ui" flexoConceptTypeURI="http://www.openflexo.org/ClientViewPoint/2016/12/SalesmenUI" cardinality="ZeroOne" />
+  <CreationScheme id="4" userID="FLX" width="800" label="create" height="600" flexoID="7" name="create">
+    <BehaviourControlGraph_Sequence id="5" flexoID="60" userID="FLX">
+      <ControlGraph1_AssignationAction id="6" userID="FLX" flexoID="13" ownerContext="controlGraph1" assign="data">
+        <AssignableAction_AddVirtualModelInstance id="7" virtualModelInstanceTitle="&quot;Data&quot;" userID="FLX" virtualModelInstance="view" flexoID="12" creationSchemeURI="http://www.openflexo.org/ClientViewPoint/2016/12/Data.create" virtualModelInstanceName="&quot;data&quot;">
+          <AddFlexoConceptInstanceParameter id="8" flexoID="52" userID="FLX" value="parameters.address" paramName="address" />
+        </AssignableAction_AddVirtualModelInstance>
+      </ControlGraph1_AssignationAction>
+      <ControlGraph2_AssignationAction id="9" userID="FLX" flexoID="59" ownerContext="controlGraph2" assign="ui">
+        <AssignableAction_AddVirtualModelInstance id="10" virtualModelInstanceTitle="&quot;UI&quot;" userID="FLX" virtualModelInstance="view" flexoID="58" creationSchemeURI="http://www.openflexo.org/ClientViewPoint/2016/12/SalesmenUI.init" virtualModelInstanceName="&quot;UI&quot;" />
+      </ControlGraph2_AssignationAction>
+    </BehaviourControlGraph_Sequence>
+    <GenericBehaviourParameter id="11" userID="FLX" type="java.lang.String" flexoID="9" isRequired="true" name="address" defaultValue="&quot;jdbc:hsqldb:hsql://localhost/&quot;" widget="TEXT_FIELD" />
+  </CreationScheme>
+</ViewPoint>
