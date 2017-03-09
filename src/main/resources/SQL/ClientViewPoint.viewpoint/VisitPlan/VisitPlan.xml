@@ -91,7 +91,7 @@
             </ControlGraph2_ConditionalAction>
             <ControlGraph1_DeclarationAction id="49" variable="clients" ownerContext="controlGraph1" userID="FLX" flexoID="157">
               <AssignableAction_SelectFlexoConceptInstance id="50" virtualModelInstance="data" flexoConceptTypeURI="http://www.openflexo.org/ClientViewPoint/2016/12/Data#Client" userID="FLX" flexoID="156">
-                <Condition id="51" condition="(selected.id.intValue.toString = id)" userID="FLX" flexoID="162" />
+                <Condition id="51" condition="(selected.id = id)" userID="FLX" flexoID="162" />
               </AssignableAction_SelectFlexoConceptInstance>
             </ControlGraph1_DeclarationAction>
           </ControlGraph2_Sequence>
