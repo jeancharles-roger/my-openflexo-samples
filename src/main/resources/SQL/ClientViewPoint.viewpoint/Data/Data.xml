@@ -98,8 +98,8 @@
       </BehaviourControlGraph_ConditionalAction>
     </ActionScheme>
     <Inspector id="66" renderer="((firstname + &quot; &quot;) + lastname)" inspectorTitle="Salesman" userID="FLX" flexoID="28">
-      <GenericInspectorEntry id="67" widget="TEXT_FIELD" readOnly="true" data="firstname" name="firstname" label="firstname" type="java.lang.String" userID="FLX" flexoID="169" />
-      <GenericInspectorEntry id="68" widget="TEXT_FIELD" readOnly="true" data="lastname" name="lastname" label="lastname" type="java.lang.String" userID="FLX" flexoID="170" />
+      <GenericInspectorEntry id="67" readOnly="true" widget="TEXT_FIELD" data="firstname" name="firstname" label="firstname" type="java.lang.String" userID="FLX" flexoID="169" />
+      <GenericInspectorEntry id="68" readOnly="true" widget="TEXT_FIELD" data="lastname" name="lastname" label="lastname" type="java.lang.String" userID="FLX" flexoID="170" />
     </Inspector>
   </FlexoConcept>
   <ModelSlot_JDBCModelSlot id="4" isRequired="true" cloningStrategy="Reference" cardinality="ZeroOne" name="db" userID="FLX" flexoID="6">
