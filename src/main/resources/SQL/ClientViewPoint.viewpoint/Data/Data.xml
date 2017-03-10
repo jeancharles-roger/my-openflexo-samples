@@ -119,16 +119,28 @@
       </ControlGraph2_IterationAction>
       <ControlGraph1_IterationAction id="78" iteratorName="item" ownerContext="controlGraph1" userID="FLX" flexoID="56">
         <Iteration_ExpressionAction id="79" expression="db.schema.getTable(&quot;CLIENT&quot;).selectAll().lines" ownerContext="iterationControlGraph" userID="FLX" flexoID="59" />
-        <ControlGraph_MatchFlexoConceptInstance id="80" creationSchemeURI="http://www.openflexo.org/ClientViewPoint/2016/12/Data#Client.create" virtualModelInstance="virtualModelInstance" ownerContext="controlGraph" userID="FLX" flexoID="61">
-          <MatchingCriteria id="81" patternRoleName="id" value="item.getValue(&quot;id&quot;).value" userID="FLX" flexoID="63" />
-          <MatchingCriteria id="82" patternRoleName="line" userID="FLX" flexoID="64" />
-          <CreateFlexoConceptInstanceParameter id="83" paramName="line" value="item" userID="FLX" flexoID="62" />
-        </ControlGraph_MatchFlexoConceptInstance>
+        <ControlGraph_Sequence id="80" ownerContext="controlGraph" userID="FLX" flexoID="329">
+          <ControlGraph2_AssignationAction id="81" assign="client.line" ownerContext="controlGraph2" userID="FLX" flexoID="328">
+            <AssignableAction_ExpressionAction id="82" expression="item" userID="FLX" flexoID="327" />
+          </ControlGraph2_AssignationAction>
+          <ControlGraph1_DeclarationAction id="83" variable="client" ownerContext="controlGraph1" userID="FLX" flexoID="326">
+            <AssignableAction_MatchFlexoConceptInstance id="84" creationSchemeURI="http://www.openflexo.org/ClientViewPoint/2016/12/Data#Client.create" virtualModelInstance="virtualModelInstance" userID="FLX" flexoID="317">
+              <MatchingCriteria id="85" patternRoleName="id" value="item.getValue(&quot;id&quot;).value" userID="FLX" flexoID="319" />
+              <MatchingCriteria id="86" patternRoleName="line" userID="FLX" flexoID="320" />
+              <MatchingCriteria id="87" patternRoleName="salesmanId" userID="FLX" flexoID="321" />
+              <MatchingCriteria id="88" patternRoleName="address" userID="FLX" flexoID="322" />
+              <MatchingCriteria id="89" patternRoleName="name" userID="FLX" flexoID="323" />
+              <MatchingCriteria id="90" patternRoleName="date" userID="FLX" flexoID="324" />
+              <MatchingCriteria id="91" patternRoleName="comments" userID="FLX" flexoID="325" />
+              <CreateFlexoConceptInstanceParameter id="92" paramName="line" value="item" userID="FLX" flexoID="318" />
+            </AssignableAction_MatchFlexoConceptInstance>
+          </ControlGraph1_DeclarationAction>
+        </ControlGraph_Sequence>
       </ControlGraph1_IterationAction>
     </BehaviourControlGraph_Sequence>
   </SynchronizationScheme>
-  <DeletionScheme id="84" name="delete" width="800" label="delete" height="600" userID="FLX" flexoID="138">
-    <BehaviourControlGraph_EmptyControlGraph id="85" userID="FLX" flexoID="137" />
+  <DeletionScheme id="93" name="delete" width="800" label="delete" height="600" userID="FLX" flexoID="138">
+    <BehaviourControlGraph_EmptyControlGraph id="94" userID="FLX" flexoID="137" />
   </DeletionScheme>
-  <Inspector id="86" inspectorTitle="Data" userID="FLX" flexoID="1" />
+  <Inspector id="95" inspectorTitle="Data" userID="FLX" flexoID="1" />
 </VirtualModel>
