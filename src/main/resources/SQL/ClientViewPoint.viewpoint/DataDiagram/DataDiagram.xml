@@ -13,7 +13,7 @@
         <RectangleShape id="11" isRounded="true" arcSize="20.0" />
         <TextStyle id="12" backgroundColor="255,255,255" color="0,0,0" font="Lucida Sans,0,11" />
       </ShapeGraphicalRepresentation>
-      <GRSpec id="13" featureName="label" value="client.name" userID="FLX" flexoID="612" />
+      <GRSpec id="13" featureName="label" value="client.name" userID="FLX" flexoID="618" />
       <TypedDiagramModelSlot idref="14" />
     </ShapeRole>
     <FlexoConceptInstanceRole id="31" virtualModelInstance="data" flexoConceptTypeURI="http://www.openflexo.org/ClientViewPoint/2016/12/Data#Client" cloningStrategy="Reference" cardinality="ZeroOne" name="client" userID="FLX" flexoID="33" />
@@ -62,7 +62,7 @@
         <OvalShape id="52" />
         <TextStyle id="53" backgroundColor="255,255,255" color="0,0,0" font="Lucida Sans,0,11" />
       </ShapeGraphicalRepresentation>
-      <GRSpec id="54" featureName="label" readOnly="true" value="salesman.render" userID="FLX" flexoID="613" />
+      <GRSpec id="54" featureName="label" readOnly="true" value="salesman.render" userID="FLX" flexoID="619" />
       <TypedDiagramModelSlot idref="14" />
     </ShapeRole>
     <FlexoConceptInstanceRole id="55" virtualModelInstance="data" flexoConceptTypeURI="http://www.openflexo.org/ClientViewPoint/2016/12/Data#Salesman" cloningStrategy="Reference" cardinality="ZeroOne" name="salesman" userID="FLX" flexoID="226" />
@@ -237,18 +237,21 @@
           </ControlGraph1_MatchFlexoConceptInstance>
         </ControlGraph_Sequence>
       </ControlGraph2_IterationAction>
-      <ControlGraph1_IterationAction id="143" iteratorName="item" ownerContext="controlGraph1" userID="FLX" flexoID="258">
-        <Iteration_ExpressionAction id="144" expression="data.salesmen" ownerContext="iterationControlGraph" userID="FLX" flexoID="260" />
-        <ControlGraph_MatchFlexoConceptInstance id="145" creationSchemeURI="http://www.openflexo.org/ClientViewPoint/2016/12/DataDiagram#SalesmanGR.create" virtualModelInstance="virtualModelInstance" ownerContext="controlGraph" userID="FLX" flexoID="262">
-          <MatchingCriteria id="146" patternRoleName="shape" userID="FLX" flexoID="264" />
-          <MatchingCriteria id="147" patternRoleName="salesman" value="item" userID="FLX" flexoID="265" />
-          <CreateFlexoConceptInstanceParameter id="148" paramName="salesman" value="item" userID="FLX" flexoID="263" />
-        </ControlGraph_MatchFlexoConceptInstance>
-      </ControlGraph1_IterationAction>
+      <ControlGraph1_Sequence id="143" ownerContext="controlGraph1" userID="FLX" flexoID="620">
+        <ControlGraph2_ExpressionAction id="144" expression="data.synchronize()" ownerContext="controlGraph2" userID="FLX" flexoID="617" />
+        <ControlGraph1_IterationAction id="145" iteratorName="item" ownerContext="controlGraph1" userID="FLX" flexoID="258">
+          <Iteration_ExpressionAction id="146" expression="data.salesmen" ownerContext="iterationControlGraph" userID="FLX" flexoID="260" />
+          <ControlGraph_MatchFlexoConceptInstance id="147" creationSchemeURI="http://www.openflexo.org/ClientViewPoint/2016/12/DataDiagram#SalesmanGR.create" virtualModelInstance="virtualModelInstance" ownerContext="controlGraph" userID="FLX" flexoID="262">
+            <MatchingCriteria id="148" patternRoleName="shape" userID="FLX" flexoID="264" />
+            <MatchingCriteria id="149" patternRoleName="salesman" value="item" userID="FLX" flexoID="265" />
+            <CreateFlexoConceptInstanceParameter id="150" paramName="salesman" value="item" userID="FLX" flexoID="263" />
+          </ControlGraph_MatchFlexoConceptInstance>
+        </ControlGraph1_IterationAction>
+      </ControlGraph1_Sequence>
     </BehaviourControlGraph_Sequence>
   </SynchronizationScheme>
-  <DeletionScheme id="149" name="delete" width="800" label="delete" height="600" userID="FLX" flexoID="81">
-    <BehaviourControlGraph_EmptyControlGraph id="150" userID="FLX" flexoID="80" />
+  <DeletionScheme id="151" name="delete" width="800" label="delete" height="600" userID="FLX" flexoID="81">
+    <BehaviourControlGraph_EmptyControlGraph id="152" userID="FLX" flexoID="80" />
   </DeletionScheme>
-  <Inspector id="151" inspectorTitle="DataDiagram" userID="FLX" flexoID="1" />
+  <Inspector id="153" inspectorTitle="DataDiagram" userID="FLX" flexoID="1" />
 </VirtualModel>
