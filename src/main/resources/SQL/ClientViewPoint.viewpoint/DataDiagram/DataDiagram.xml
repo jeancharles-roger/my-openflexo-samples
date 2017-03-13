@@ -13,7 +13,7 @@
         <RectangleShape id="11" isRounded="true" arcSize="20.0" />
         <TextStyle id="12" backgroundColor="255,255,255" color="0,0,0" font="Lucida Sans,0,11" />
       </ShapeGraphicalRepresentation>
-      <GRSpec id="13" featureName="label" value="client.name" userID="FLX" flexoID="618" />
+      <GRSpec id="13" featureName="label" value="client.name" userID="FLX" flexoID="621" />
       <TypedDiagramModelSlot idref="14" />
     </ShapeRole>
     <FlexoConceptInstanceRole id="31" virtualModelInstance="data" flexoConceptTypeURI="http://www.openflexo.org/ClientViewPoint/2016/12/Data#Client" cloningStrategy="Reference" cardinality="ZeroOne" name="client" userID="FLX" flexoID="33" />
@@ -62,7 +62,7 @@
         <OvalShape id="52" />
         <TextStyle id="53" backgroundColor="255,255,255" color="0,0,0" font="Lucida Sans,0,11" />
       </ShapeGraphicalRepresentation>
-      <GRSpec id="54" featureName="label" readOnly="true" value="salesman.render" userID="FLX" flexoID="619" />
+      <GRSpec id="54" featureName="label" readOnly="true" value="salesman.render" userID="FLX" flexoID="622" />
       <TypedDiagramModelSlot idref="14" />
     </ShapeRole>
     <FlexoConceptInstanceRole id="55" virtualModelInstance="data" flexoConceptTypeURI="http://www.openflexo.org/ClientViewPoint/2016/12/Data#Salesman" cloningStrategy="Reference" cardinality="ZeroOne" name="salesman" userID="FLX" flexoID="226" />
