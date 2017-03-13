@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <VirtualModel id="0" modelVersion="1.0" version="0.1" name="SalesmenUI" userID="FLX" flexoID="2">
-  <ModelSlot_FIBComponentModelSlot id="1" templateComponentURI="http://www.openflexo.org/demos-rc/ViewpointsRC/ClientJDBC/ClientViewPoint.viewpoint/fib/salesmen.fib" isRequired="true" cloningStrategy="Reference" cardinality="ZeroOne" name="ui" userID="FLX" flexoID="4">
+  <ModelSlot_FIBComponentModelSlot id="1" isRequired="true" cloningStrategy="Reference" cardinality="ZeroOne" name="ui" userID="FLX" flexoID="4">
     <VariableAssignment id="2" variableType="org.openflexo.foundation.fml.VirtualModelInstanceType&lt;http://www.openflexo.org/ClientViewPoint/2016/12/SalesmenUI&gt;" variable="data" value="virtualModelInstance" userID="FLX" flexoID="3" />
     <FIBComponentModelSlot idref="1" />
   </ModelSlot_FIBComponentModelSlot>
